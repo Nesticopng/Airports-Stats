@@ -1,0 +1,201 @@
+2023_Rank_Total,Airport,Percentage_Change_2022_2023_Total,2023_Enplaned_Passengers_Total,2022_Rank_Total,2022_Enplaned_Passengers_Total
+1,"Atlanta, GA: Hartsfield-Jackson Atlanta International",12.2,50925180,1,45373200
+2,"Dallas/Fort Worth, TX: Dallas/Fort Worth International",11.0,39226359,2,35329966
+3,"Denver, CO: Denver International",12.1,37839547,3,33749865
+4,"Los Angeles, CA: Los Angeles International",13.4,36611329,5,32285134
+5,"Chicago, IL: Chicago O'Hare International",8.1,35828284,4,33131613
+6,"New York, NY: John F. Kennedy International",13.0,30511651,6,27005698
+7,"Orlando, FL: Orlando International",14.6,28019056,8,24442061
+8,"Las Vegas, NV: Harry Reid International",9.4,27642282,7,25264808
+9,"Charlotte, NC: Charlotte Douglas International",12.1,25880504,10,23091088
+10,"Seattle, WA: Seattle/Tacoma International",11.0,24550658,11,22113500
+11,"Miami, FL: Miami International",3.7,24543802,9,23676327
+12,"Newark, NJ: Newark Liberty International",13.0,24476285,13,21655978
+13,"San Francisco, CA: San Francisco International",18.5,24173894,14,20401847
+14,"Phoenix, AZ: Phoenix Sky Harbor International",9.3,23813822,12,21790999
+15,"Houston, TX: George Bush Intercontinental/Houston",12.2,22209675,15,19800390
+16,"Boston, MA: Logan International",14.4,19950456,16,17432694
+17,"Fort Lauderdale, FL: Fort Lauderdale-Hollywood International",10.8,17036666,17,15370928
+18,"Minneapolis, MN: Minneapolis-St Paul International",11.7,16984511,18,15203320
+19,"New York, NY: LaGuardia",12.5,16171766,19,14368553
+20,"Detroit, MI: Detroit Metro Wayne County",11.8,15350399,20,13730002
+21,"Philadelphia, PA: Philadelphia International",9.9,13629373,21,12401523
+22,"Salt Lake City, UT: Salt Lake City International",4.2,12892409,22,12370406
+23,"Baltimore, MD: Baltimore/Washington International Thurgood Marshall",15.4,12765016,25,11063817
+24,"Washington, DC: Ronald Reagan Washington National",7.0,12346579,23,11540151
+25,"San Diego, CA: San Diego International",9.3,12156421,24,11122123
+26,"Washington, DC: Washington Dulles International",17.5,12048559,28,10250900
+27,"Tampa, FL: Tampa International",10.8,11656432,26,10517678
+28,"Nashville, TN: Nashville International",14.2,11195381,29,9806500
+29,"Austin, TX: Austin - Bergstrom International",4.3,10806571,27,10358119
+30,"Chicago, IL: Chicago Midway International",10.5,10646056,30,9636202
+31,"Honolulu, HI: Daniel K Inouye International",14.8,10101331,31,8799772
+32,"Dallas, TX: Dallas Love Field",9.0,8454181,32,7756791
+33,"Portland, OR: Portland International",12.2,8115842,33,7233023
+34,"St. Louis, MO: St Louis Lambert International",9.0,7297030,34,6692664
+35,"Raleigh/Durham, NC: Raleigh-Durham International",21.8,7100843,38,5830788
+36,"Houston, TX: William P Hobby",5.2,6763389,35,6429032
+37,"Sacramento, CA: Sacramento International",5.5,6363510,36,6034545
+38,"New Orleans, LA: Louis Armstrong New Orleans International",6.4,6295092,37,5915160
+39,"San Jose, CA: Norman Y. Mineta San Jose International",6.6,5944149,39,5577378
+40,"San Juan, PR: Luis Munoz Marin International",18.2,5923308,43,5012383
+41,"Santa Ana, CA: John Wayne Airport-Orange County",3.0,5658796,40,5493611
+42,"Kansas City, MO: Kansas City International",17.8,5638639,44,4786019
+43,"Oakland, CA: Metro Oakland International",0.7,5463750,41,5424391
+44,"San Antonio, TX: San Antonio International",12.2,5304833,45,4726816
+45,"Fort Myers, FL: Southwest Florida International",-3.4,4954658,42,5126597
+46,"Cleveland, OH: Cleveland-Hopkins International",13.4,4791133,46,4224315
+47,"Indianapolis, IN: Indianapolis International",13.7,4764189,47,4190793
+48,"Pittsburgh, PA: Pittsburgh International",14.4,4461267,49,3898717
+49,"Cincinnati, OH: Cincinnati/Northern Kentucky International",16.4,4256878,50,3657458
+50,"Columbus, OH: John Glenn Columbus International",13.0,4074915,51,3605900
+51,"West Palm Beach/Palm Beach, FL: Palm Beach International",17.2,3805131,52,3246604
+52,"Kahului, HI: Kahului Airport",-9.2,3742784,48,4120490
+53,"Jacksonville, FL: Jacksonville International",14.0,3609026,53,3165978
+54,"Ontario, CA: Ontario International",12.0,3175133,56,2834891
+55,"Hartford, CT: Bradley International",9.7,3116057,55,2839268
+56,"Charleston, SC: Charleston AFB/International",16.2,3028628,58,2605651
+57,"Burbank, CA: Bob Hope",2.1,3010070,54,2949215
+58,"Milwaukee, WI: General Mitchell International",10.5,2920421,57,2642287
+59,"Albuquerque, NM: Albuquerque International Sunport",12.4,2601913,60,2314568
+60,"Anchorage, AK: Ted Stevens Anchorage International",3.9,2580631,59,2483479
+61,"Omaha, NE: Eppley Airfield",11.8,2458077,62,2198187
+62,"Richmond, VA: Richmond International",17.3,2390287,66,2037712
+63,"Memphis, TN: Memphis International",10.9,2384726,63,2150949
+64,"Boise, ID: Boise Air Terminal",6.2,2365547,61,2226706
+65,"Norfolk, VA: Norfolk International",11.6,2304964,65,2066244
+66,"Buffalo, NY: Buffalo Niagara International",13.9,2276138,68,1998111
+67,"Louisville, KY: Louisville Muhammad Ali International",19.6,2258621,72,1888103
+68,"Reno, NV: Reno/Tahoe International",5.6,2215481,64,2097322
+69,"Sarasota/Bradenton, FL: Sarasota/Bradenton International",12.1,2142413,70,1910453
+70,"Oklahoma City, OK: Will Rogers World",10.7,2126280,69,1920063
+71,"Kona, HI: Ellison Onizuka Kona International at Keahole",4.6,2090221,67,1998503
+72,"Spokane, WA: Spokane International",5.1,1999960,71,1902794
+73,"El Paso, TX: El Paso International",5.9,1974566,73,1864402
+74,"Tucson, AZ: Tucson International",12.7,1907424,78,1691824
+75,"Savannah, GA: Savannah/Hilton Head International",10.4,1904083,75,1724507
+76,"Grand Rapids, MI: Gerald R. Ford International",10.4,1895051,76,1715867
+77,"Long Beach, CA: Long Beach Airport",14.9,1831701,79,1593952
+78,"Lihue, HI: Lihue Airport",2.8,1814219,74,1764498
+79,"Providence, RI: Rhode Island Tf Green International",10.1,1726061,80,1567476
+80,"Myrtle Beach, SC: Myrtle Beach International",-2.9,1653778,77,1703442
+81,"Palm Springs, CA: Palm Springs International",8.3,1623490,81,1498692
+82,"Tulsa, OK: Tulsa International",8.6,1567546,82,1443733
+83,"Des Moines, IA: Des Moines International",11.0,1511872,83,1361450
+84,"Birmingham, AL: Birmingham-Shuttlesworth International",12.6,1490727,85,1324398
+85,"Sanford, FL: Orlando Sanford International",5.5,1435158,84,1359904
+86,"Syracuse, NY: Syracuse Hancock International",13.2,1407690,87,1243052
+87,"Knoxville, TN: McGhee Tyson",13.6,1374673,89,1209924
+88,"Albany, NY: Albany International",7.4,1373353,86,1278365
+89,"Pensacola, FL: Pensacola International",12.8,1365423,88,1210752
+90,"Rochester, NY: Frederick Douglass Grtr Rochester International",14.5,1324334,91,1156917
+91,"Greer, SC: Greenville-Spartanburg International",17.3,1251840,95,1066830
+92,"Bozeman, MT: Bozeman Yellowstone International",8.4,1227413,92,1132418
+93,"St. Petersburg, FL: St Pete Clearwater International",2.0,1227073,90,1202789
+94,"Fresno, CA: Fresno Yosemite International",11.5,1198229,93,1074388
+95,"Colorado Springs, CO: City of Colorado Springs Municipal",10.3,1181828,94,1071480
+96,"Asheville, NC: Asheville Regional",22.1,1123505,101,920076
+97,"White Plains, NY: Westchester County",25.9,1123344,103,892045
+98,"Valparaiso, FL: Eglin AFB Destin Fort Walton Beach",13.3,1116341,97,985468
+99,"Portland, ME: Portland International Jetport",12.9,1113516,96,986530
+100,"Little Rock, AR: Bill and Hillary Clinton Nat Adams Field",11.5,1093992,98,980956
+101,"Madison, WI: Dane County Regional-Truax Field",13.2,1029114,102,909205
+102,"Fayetteville, AR: Northwest Arkansas National",19.7,967501,104,808429
+103,"Punta Gorda, FL: Punta Gorda Airport",3.1,949062,100,920503
+104,"Phoenix, AZ: Phoenix - Mesa Gateway",-0.6,936625,99,942673
+105,"Greensboro/High Point, NC: Piedmont Triad International",13.9,896080,105,786859
+106,"Wichita, KS: Wichita Dwight D Eisenhower National",10.7,840392,107,758832
+107,"Eugene, OR: Mahlon Sweet Field",7.7,836810,106,776877
+108,"Panama City, FL: Northwest Florida Beaches International",9.4,816341,108,746244
+109,"Guam, TT: Guam International",73.7,740021,135,426057
+110,"Huntsville, AL: Huntsville International-Carl T Jones Field",23.2,722775,121,586804
+111,"Charlotte Amalie, VI: Cyril E King",-2.0,704632,109,718910
+112,"Cedar Rapids/Iowa City, IA: The Eastern Iowa",13.1,685779,117,606556
+113,"Hilo, HI: Hilo International",7.5,683866,112,636248
+114,"Midland/Odessa, TX: Midland International Air and Space Port",8.0,683000,113,632647
+115,"Lexington, KY: Blue Grass",15.4,660506,122,572214
+116,"Key West, FL: Key West International",-5.8,654609,110,695169
+117,"Wilmington, NC: Wilmington International",21.3,653908,124,539173
+118,"Sioux Falls, SD: Joe Foss Field",8.2,651357,119,601939
+119,"Burlington, VT: Burlington International",7.6,648700,118,602935
+120,"Harrisburg, PA: Harrisburg International",4.6,647936,114,619355
+121,"Manchester, NH: Manchester Boston Regional",-0.2,643694,111,644797
+122,"Islip, NY: Long Island MacArthur",4.8,639913,115,610372
+123,"Santa Barbara, CA: Santa Barbara Municipal",4.3,636018,116,609652
+124,"Springfield, MO: Springfield-Branson National",17.3,630010,125,537180
+125,"Jackson/Vicksburg, MS: Jackson Medgar Wiley Evers International",4.8,626467,120,597581
+126,"Dayton, OH: James M Cox/Dayton International",6.1,589269,123,555268
+127,"Columbia, SC: Columbia Metropolitan",17.4,585847,129,498877
+128,"Bend/Redmond, OR: Roberts Field",8.8,558392,126,513216
+129,"Lubbock, TX: Lubbock Preston Smith International",11.1,539364,130,485403
+130,"Fairbanks, AK: Fairbanks International",7.4,537131,128,500266
+131,"Fargo, ND: Hector International",12.9,516244,131,457195
+132,"Mission/McAllen/Edinburg, TX: McAllen International",13.6,508666,132,447752
+133,"Jackson, WY: Jackson Hole",23.8,494415,141,399205
+134,"New Haven, CT: Tweed New Haven",39.3,489773,149,351688
+135,"Chattanooga, TN: Lovell Field",13.1,485762,134,429483
+136,"Medford, OR: Rogue Valley International - Medford",-5.1,478013,127,503955
+137,"Harlingen/San Benito, TX: Valley International",9.8,474859,133,432453
+138,"Appleton, WI: Appleton International",14.2,474245,139,415411
+139,"Missoula, MT: Missoula Montana",7.9,456790,136,423519
+140,"Kalispell, MT: Glacier Park International",8.5,456052,137,420408
+141,"Pasco/Kennewick/Richland, WA: Tri Cities",12.1,437983,143,390643
+142,"Billings, MT: Billings Logan International",10.8,428075,144,386381
+143,"Aguadilla, PR: Rafael Hernandez",23.1,425256,150,345539
+144,"Allentown/Bethlehem/Easton, PA: Lehigh Valley International",-0.2,417651,138,418634
+145,"Tallahassee, FL: Tallahassee International",4.8,411808,142,392933
+146,"Provo, UT: Provo Municipal",96.7,410294,183,208633
+147,"South Bend, IN: South Bend International",13.5,405263,148,357117
+148,"Amarillo, TX: Rick Husband Amarillo International",11.0,397554,146,358282
+149,"Fort Wayne, IN: Fort Wayne International",9.2,390025,147,357291
+150,"Atlantic City, NJ: Atlantic City International",-6.9,383130,140,411607
+151,"Baton Rouge, LA: Baton Rouge Metropolitan/Ryan Field",13.7,370960,154,326389
+152,"Juneau, AK: Juneau International",-1.2,354905,145,359312
+153,"Corpus Christi, TX: Corpus Christi International",10.0,348703,156,317094
+154,"Traverse City, MI: Cherry Capital",20.5,346757,163,287832
+155,"Bangor, ME: Bangor International",2.2,346165,151,338571
+156,"Daytona Beach, FL: Daytona Beach International",24.2,345510,165,278178
+157,"Rapid City, SD: Rapid City Regional",4.3,344992,152,330650
+158,"Roanoke, VA: Roanoke Blacksburg Regional",15.3,342086,161,296744
+159,"Akron, OH: Akron-Canton Regional",29.3,338570,171,261764
+160,"Trenton, NJ: Trenton Mercer",-0.7,325865,153,328139
+161,"San Luis Obispo, CA: San Luis County Regional",18.8,323866,166,272532
+162,"Green Bay, WI: Green Bay Austin Straubel International",9.6,322419,162,294131
+163,"Santa Rosa, CA: Charles M. Schulz - Sonoma County",4.7,317784,158,303592
+164,"Peoria, IL: General Downing - Peoria International",11.0,314343,164,283216
+165,"Bellingham, WA: Bellingham International",-3.3,309873,155,320332
+166,"Aspen, CO: Aspen Pitkin County Sardy Field",3.2,308256,159,298753
+167,"Shreveport, LA: Shreveport Regional",13.0,306985,167,271712
+168,"Everett, WA: Snohomish County",17.6,306156,173,260406
+169,"Charlottesville, VA: Charlottesville Albemarle",17.5,305208,174,259756
+170,"Flint, MI: Bishop International",-6.0,280609,160,298513
+171,"Augusta, GA: Augusta Regional at Bush Field",3.7,277464,169,267570
+172,"Mobile, AL: Mobile Regional",5.3,275290,172,261504
+173,"Gulfport/Biloxi, MS: Gulfport-Biloxi International",11.7,272088,175,243661
+174,"Moline, IL: Quad Cities International",1.1,270685,168,267716
+175,"Idaho Falls, ID: Idaho Falls Regional",-12.5,269989,157,308406
+176,"Gainesville, FL: Gainesville Regional",2.3,267912,170,261820
+177,"Bismarck/Mandan, ND: Bismarck Municipal",6.4,257167,176,241735
+178,"Monterey, CA: Monterey Regional",14.6,256868,179,224191
+179,"Melbourne, FL: Melbourne Orlando International",13.2,247306,181,218489
+180,"Montrose/Delta, CO: Montrose Regional",4.7,243789,177,232742
+181,"Grand Junction, CO: Grand Junction Regional",10.1,243693,180,221351
+182,"Christiansted, VI: Henry E. Rohlsen",15.2,235182,184,204082
+183,"Lafayette, LA: Lafayette Regional Paul Fournet Field",1.7,228389,178,224476
+184,"Eagle, CO: Eagle County Regional",5.6,226570,182,214497
+185,"Bristol/Johnson City/Kingsport, TN: Tri Cities",15.0,219779,186,191128
+186,"Durango, CO: Durango La Plata County",18.6,217322,188,183257
+187,"Saipan, TT: Francisco C. Ada Saipan International",105.1,215265,216,104967
+188,"Hayden, CO: Yampa Valley",4.7,206099,185,196869
+189,"Charleston/Dunbar, WV: West Virginia International Yeager",18.4,193822,191,163759
+190,"Montgomery, AL: Montgomery Regional",18.7,178825,194,150694
+191,"Great Falls, MT: Great Falls International",25.5,176959,198,141048
+192,"Bakersfield, CA: Meadows Field",23.8,174469,199,140884
+193,"Scranton/Wilkes-Barre, PA: Wilkes Barre Scranton International",-8.2,173886,187,189434
+194,"Brownsville, TX: Brownsville South Padre Island International",35.6,171598,205,126554
+195,"Fayetteville, NC: Fayetteville Regional/Grannis Field",1.2,166486,190,164530
+196,"Evansville, IN: Evansville Regional",7.7,164260,193,152575
+197,"Bloomington/Normal, IL: Central Il Regional Airport at Bloomington",-5.8,163243,189,173286
+198,"Columbus, OH: Rickenbacker International",1.0,148425,196,146997
+199,"Ketchikan, AK: Ketchikan International",3.3,147374,197,142694
+200,"Belleville, IL: Scott AFB MidAmerica St Louis",-9.4,147319,192,162581
