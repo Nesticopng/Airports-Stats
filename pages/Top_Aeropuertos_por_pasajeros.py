@@ -115,7 +115,7 @@ def crear_grafico_dinamico(df, anio, flujo, orden, n_aeropuertos):
         title=f'{orden} de {n_aeropuertos} Aeropuertos por Pasajeros ({flujo.capitalize()}, {anio})',
         labels={nombre_columna_datos: f'Pasajeros {flujo.capitalize()}', 'airport': 'Aeropuerto'},
         color=nombre_columna_datos, # Colorear por el valor
-        color_continuous_scale=px.colors.sequential.Plasma
+        color_continuous_scale=px.colors.sequential.Blues
     )
     
     # Mejorar la visualización: Ordenar las barras para que la más grande quede arriba
@@ -181,21 +181,45 @@ if anio_seleccionado == '2023':
             
             # --- BLOQUE ANIDADO 1.1: Condición de FLUJO ---
     if flujo_seleccionado == 'total':
-                
+
         st.markdown(f"""
-                    **Análisis total 2023**
+                    Podemos observar que durante el año 2023 los aeropuertos con la mayor cantidad de pasajeros fueron:
+                    + Hartsfield-Jackson Atlanta International. (50.925.180)
+                    + Dallas/Fort Worth International. (39.226.359)
+                    + Denver International. (37.839.547)
+
+                    Mientras que los aeropuerton con la menor cantidad de pasajeros en el año 2022 fueron:
+                    + Scott AFB MidAmerica St Louis. (147.319)
+                    + Ketchikan International. (147.374)
+                    + Rickenbacker International. (148.425)
                     """)
             
     elif flujo_seleccionado == 'international':
                 
         st.markdown(f"""
-                    **Análisis internacional 2023**
+                    Podemos observar que durante el año 2023 los aeropuertos con la mayor cantidad de pasajeros internacionales fueron:
+                    + John F. Kennedy International. (16.202.019)
+                    + Los Angeles International. (10.570.556)
+                    + Miami International. (10.477.110)
+
+                    Mientras que los aeropuerton con la menor cantidad de pasajeros internacionales en el año 2023 fueron:
+                    + Cleveland-Hopkins International. (104.487)
+                    + Louis Armstrong New Orleans International. (116.430)
+                    + Francisco C. Ada Saipan International (145.141)
                     """)
     
     elif flujo_seleccionado == 'domestic':
                 
         st.markdown(f"""
-                    **Análisis doméstico 2023**
+                    Podemos observar que durante el año 2023 los aeropuertos con la mayor cantidad de pasajeros domésticos fueron:
+                    + Hartsfield-Jackson Atlanta International. (44.698.432)
+                    + Denver International. (35.870.225)
+                    + Dallas/Fort Worth International. (33.833.854)
+
+                    Mientras que los aeropuerton con la menor cantidad de pasajeros domésticos en el año 2023 fueron:
+                    + Scott AFB MidAmerica St Louis. (147.319)
+                    + Ketchiokan International. (147.374)
+                    + Rickenbacker International. (148.425)
                     """)
             
 elif anio_seleccionado == '2022':
@@ -204,17 +228,41 @@ elif anio_seleccionado == '2022':
     if flujo_seleccionado == 'total':
         
         st.markdown(f"""
-                    **Análisis total 2022**
+                    Podemos observar que durante el año 2022 los aeropuertos con la mayor cantidad de pasajeros fueron:
+                    + Hartsfield-Jackson Atlanta International. (45.373.200)
+                    + Dallas/Fort Worth International. (35.329.966)
+                    + Denver International. (33.749.865)
+
+                    Mientras que los aeropuerton con la menor cantidad de pasajeros en el año 2022 fueron:
+                    + Francisco C. Ada Saipan International. (104.967)
+                    + Brownsville South Padre Island International. (126.554)
+                    + Meadows Field. (140.884)
                     """)
     
-    if flujo_seleccionado == 'internacional':
+    if flujo_seleccionado == 'international':
         
         st.markdown(f"""
-                    **Análisis internacional 2022**
+                    Podemos observar que durante el año 2022 los aeropuertos con la mayor cantidad de pasajeros internacionales fueron:
+                    + John F. Kennedy International. (13.038.319)
+                    + Miami International. (9.567.008)
+                    + Los Angeles International. (7.873.872)
+
+                    Mientras que los aeropuerton con la menor cantidad de pasajeros internacionales en el año 2022 fueron:
+                    + Francisco C. Ada Saipan International. (26.617)
+                    + Cleveland-Hopkins International. (76.035)
+                    + Louis Armstrong New Orleans International. (81.944)
                     """)
         
     if flujo_seleccionado == 'domestic':
         
         st.markdown(f"""
-                    **Análisis doméstico 2023**
+                    Podemos observar que durante el año 2022 los aeropuertos con la mayor cantidad de pasajeros domésticos fueron:
+                    + Hartsfield-Jackson Atlanta International. (40.526.044)
+                    + Denver International. (32.123.378)
+                    + Dallas/Fort Worth International. (30.625.790)
+
+                    Mientras que los aeropuerton con la menor cantidad de pasajeros domésticos en el año 2022  fueron:
+                    + Brownsville South Padre Island International. (126.554)
+                    + Meadows FIeld. (140.884)
+                    + Great Falls International. (141.048)
                     """)
