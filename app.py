@@ -93,7 +93,7 @@ elif menu == "🔍 Consultas SQL":
     query_seleccionado = st.selectbox(
         "Consultas disponibles:",
         [
-            "🏆 Top 18 - Mayor Crecimiento Doméstico 2022-2023",
+            "🏆 Top 10 - Mayor Crecimiento Doméstico 2022-2023",
             "📈 Aeropuertos con Crecimiento >20% Doméstico"
         ]
     )
@@ -101,8 +101,8 @@ elif menu == "🔍 Consultas SQL":
     # Botón para ejecutar el query seleccionado
     if st.button("🚀 Ejecutar Query Seleccionado", type="primary"):
         
-        if query_seleccionado == "🏆 Top 18 - Mayor Crecimiento Doméstico 2022-2023":
-            st.info("**Ejecutando:** Top 18 aeropuertos con mayor crecimiento porcentual")
+        if query_seleccionado == "🏆 Top 10 - Mayor Crecimiento Doméstico 2022-2023":
+            st.info("**Ejecutando:** Top 10 aeropuertos con mayor crecimiento porcentual")
             
             with st.spinner("Cargando datos..."):
                 try:
@@ -111,7 +111,7 @@ elif menu == "🔍 Consultas SQL":
                     if not df.empty:
                         # Seleccionar solo las columnas que necesitamos y ordenar
                         df_resultado = df[['airport', 'percentage_change_2022_2023_dom']]
-                        df_resultado = df_resultado.sort_values('percentage_change_2022_2023_dom', ascending=False).head(18)
+                        df_resultado = df_resultado.sort_values('percentage_change_2022_2023_dom', ascending=False).head(10)
                         st.dataframe(df_resultado, width='stretch')
                         st.success(f"✅ Se encontraron {len(df_resultado)} registros")
                     else:
@@ -129,7 +129,7 @@ elif menu == "🔍 Consultas SQL":
                     if not df.empty:
                         # Filtrar y ordenar
                         df_resultado = df[['airport', 'percentage_change_2022_2023_dom']]
-                        df_resultado = df_resultado[df_resultado['percentage_change_2022_2023_dom'] >= 20]
+                        df_resultado = df_resultado[df_resultado['percentage_change_2022_2023_dom'] > 20]
                         df_resultado = df_resultado.sort_values('percentage_change_2022_2023_dom', ascending=False)
                         st.dataframe(df_resultado, width='stretch')
                         st.success(f"✅ Se encontraron {len(df_resultado)} registros")
