@@ -198,19 +198,43 @@ if 'df_final' in locals():
 if flujo_seleccionado == 'total':
                 
         st.markdown(f"""
-                    **Total** 
+                    Los aeropuertos que tuvieron un mayor porcentaje de decrecimiento de pasajeros entre los años 2022 y 2023 fueron:
+                    + Francisco C. Ada Saipan International (105.78%)
+                    + Provo Municipal (96.65%)
+                    + Guam International (73.69%)
+
+                    Los aeropuertos que tuvieron un menor porcentaje de crecimiento de pasajeros entre los años 2022 y 2023 fueron:
+                    + Kahului Airport (-9.17%)
+                    + Scott AFB MidAmerica St Louis (-9.39%)
+                    + Idaho Falls Regional (-12.45%)
                     """)
         
 elif flujo_seleccionado == 'international':
                 
         st.markdown(f"""
-                    **Internacional**
+                    Los aeropuertos que tuvieron un mayor porcentaje de crecimiento de pasajeros entre los años 2022 y 2023 fueron:
+                    + Francisco C. Ada Saipan International (445,29%)
+                    + Ontario International (125,73%)
+                    + Guam International (113,53%)
+
+                    Los aeropuertos que tuvieron un menor porcentaje de crecimiento de pasajeros entre los años 2022 y 2023 fueron:
+                    + William P Hobby (5,39%)
+                    + Fresno YTosemite International (2,82%)
+                    + Kakului Airport (2,34%)
                     """)
     
 elif flujo_seleccionado == 'domestic':
                 
         st.markdown(f"""
-                    **Doméstica**
+                    Los aeropuertos que tuvieron un mayor porcentaje de crecimiento de pasajeros entre los años 2022 y 2023 fueron:
+                    + Provo Municipal (96.65%)
+                    + Tweed New Haven (39,26%)
+                    + Brownsville South Padre Island International (35,59%)
+
+                    Los aeropuertos que tuvieron un menor porcentaje de crecimiento de pasajeros entre los años 2022 y 2023 fueron:
+                    + Scott AFB MidAmerica St Louis (-9,38%)
+                    + Kahului Airport (-9,6%)
+                    + Idaho Falls Ragional (-12,45%)
                     """)
             
 
