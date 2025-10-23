@@ -1,5 +1,9 @@
 import streamlit as st
+<<<<<<< Updated upstream
 from utils.database import obtener_datos
+=======
+from utils.database import obtener_datos, ejecutar_query_sql
+>>>>>>> Stashed changes
 import pandas as pd
 
 # Configurar la página
@@ -83,9 +87,15 @@ if menu == "📊 Datos Predefinidos":
     else:
         st.error(f"❌ No se pudieron cargar los datos de la tabla '{tabla_seleccionada}'")
 
+<<<<<<< Updated upstream
 # ========== OPCIÓN 2: CONSULTAS SQL MÁGICAS ==========
 elif menu == "🔍 Consultas SQL":
     st.subheader("🔍 Consultas SQL Personalizadas")
+=======
+# ========== OPCIÓN 2: CONSULTAS SQL REALES ==========
+elif menu == "🔍 Consultas SQL":
+    st.subheader("🔍 Consultas SQL - EJECUCIÓN REAL")
+>>>>>>> Stashed changes
     
     # Crear pestañas para los diferentes tipos de consultas
     tab_queries, tab_custom = st.tabs(["🚀 Queries Predefinidos", "📝 SQL Personalizado"])
@@ -106,6 +116,7 @@ elif menu == "🔍 Consultas SQL":
             ]
         )
         
+<<<<<<< Updated upstream
         # QUERY 1: Top 18 crecimiento doméstico
         if query_seleccionado == "🏆 Top 18 - Mayor Crecimiento Doméstico 2022-2023":
             st.info("**Consulta:** Top 18 aeropuertos con mayor crecimiento porcentual en pasajeros domésticos (2022-2023)")
@@ -268,11 +279,45 @@ INNER JOIN airports as a on a.id = t.airport_id
 WHERE "2023_rank_total" < "2022_rank_total"  
 ORDER BY "2023_rank_total" ASC;
                 """, language='sql')
+=======
+        # Botón para ejecutar el query seleccionado
+        if st.button("🚀 Ejecutar Query Seleccionado", type="primary"):
+            
+            # QUERY 1: Top 18 crecimiento doméstico
+            if query_seleccionado == "🏆 Top 18 - Mayor Crecimiento Doméstico 2022-2023":
+                st.info("**Ejecutando:** Top 18 aeropuertos con mayor crecimiento porcentual en pasajeros domésticos")
+                
+                query_sql = """
+                SELECT 
+                    a.name,
+                    d.percentage_change_2022_2023_dom
+                FROM domestic as d
+                INNER JOIN airports as a ON d.airport_id = a.id
+                ORDER BY percentage_change_2022_2023_dom DESC
+                LIMIT 18;
+                """
+                
+                with st.spinner("Ejecutando consulta en la base de datos REAL..."):
+                    try:
+                        # ¡ESTA ES LA PARTE IMPORTANTE! Ejecuta el query REAL
+                        df_resultado = ejecutar_query_sql(query_sql)
+                        st.dataframe(df_resultado, width='stretch')
+                        st.success(f"✅ Se encontraron {len(df_resultado)} registros REALES")
+                    except Exception as e:
+                        st.error(f"❌ Error ejecutando query: {e}")
+                
+                with st.expander("🔍 Ver Query SQL"):
+                    st.code(query_sql, language='sql')
+            
+            # Los demás queries siguen igual...
+            # ... (el resto del código que te pasé antes)
+>>>>>>> Stashed changes
     
     # ========== PESTAÑA 2: SQL PERSONALIZADO ==========
     with tab_custom:
         st.write("Escribe tus propias consultas SQL para explorar los datos")
         
+<<<<<<< Updated upstream
         # Ejemplos de consultas para ayudar
         with st.expander("💡 Ejemplos de consultas"):
             st.code("""
@@ -292,6 +337,8 @@ ORDER BY "2023_enplaned_passengers_inter" DESC;
 SELECT * FROM airports WHERE state = 'CA';
             """)
         
+=======
+>>>>>>> Stashed changes
         # Cuadro grande para escribir SQL
         query_sql = st.text_area(
             "Escribe tu consulta SQL aquí:",
@@ -302,6 +349,7 @@ SELECT * FROM airports WHERE state = 'CA';
         # Botón mágico para ejecutar
         if st.button("🚀 Ejecutar Query Personalizado", type="primary"):
             if query_sql.strip():
+<<<<<<< Updated upstream
                 # Guardar el query en la memoria mágica
                 st.session_state['query_actual'] = query_sql
             else:
@@ -328,6 +376,21 @@ SELECT * FROM airports WHERE state = 'CA';
                     
                 except Exception as e:
                     st.error(f"❌ Error: {str(e)}")
+=======
+                with st.spinner("Ejecutando consulta en la base de datos REAL..."):
+                    try:
+                        # ¡ESTA ES LA PARTE IMPORTANTE! Ejecuta el query REAL
+                        df_resultado = ejecutar_query_sql(query_sql)
+                        st.write("**Tu consulta:**")
+                        st.code(query_sql, language='sql')
+                        st.write("**Resultados REALES:**")
+                        st.dataframe(df_resultado, width='stretch')
+                        st.success(f"✅ Se encontraron {len(df_resultado)} registros REALES")
+                    except Exception as e:
+                        st.error(f"❌ Error en la consulta: {e}")
+            else:
+                st.warning("📝 Escribe una consulta SQL primero")
+>>>>>>> Stashed changes
 
 # Footer
 st.markdown("---")
