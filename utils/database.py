@@ -96,3 +96,24 @@ def obtener_datos(tabla):
     except Exception as e:
         print(f"Error al obtener datos de la tabla {tabla}: {e}")
         return pd.DataFrame()
+
+# ========== AQUÍ AGREGA LA NUEVA FUNCIÓN ==========
+def ejecutar_query_sql(query_sql):
+    """
+    Ejecutar consultas SQL personalizadas - FUNCIÓN REAL
+    Esta función ejecuta los queries SQL directamente en tu base de datos
+    y devuelve los resultados REALES, no datos de ejemplo.
+    
+    Args:
+        query_sql (str): Consulta SQL a ejecutar
+        
+    Returns:
+        pd.DataFrame: DataFrame con los resultados REALES de la base de datos
+    """
+    try:
+        # Esto ejecuta el query REAL en tu base de datos
+        response = supabase.raw(query_sql).execute()
+        return pd.DataFrame(response.data)
+    except Exception as e:
+        print(f"Error ejecutando query: {e}")
+        raise Exception(f"Error en la consulta SQL: {str(e)}")

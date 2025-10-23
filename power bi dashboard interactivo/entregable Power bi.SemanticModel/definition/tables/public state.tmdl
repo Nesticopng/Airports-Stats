@@ -1,0 +1,31 @@
+table 'public state'
+	lineageTag: 70deb32e-b80c-4aad-83f5-ec37966a57fc
+
+	column id
+		dataType: int64
+		formatString: 0
+		lineageTag: aa5f18dc-c236-44ff-9b3e-a248f861dc4c
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: 39e25663-4151-41dc-8f8b-e5cf4d725db7
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'public state' = m
+		mode: import
+		source =
+				let
+				    Origen = PostgreSQL.Database("aws-1-sa-east-1.pooler.supabase.com", "postgres"),
+				    public_state = Origen{[Schema="public",Item="state"]}[Data]
+				in
+				    public_state
+
+	annotation PBI_ResultType = Table
+

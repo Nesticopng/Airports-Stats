@@ -1,0 +1,36 @@
+relationship 83070fa5-36a0-4351-b5cc-97d072505b15
+	fromColumn: 'public airports'.city_id
+	toColumn: 'public city'.id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 8c6b551a-d7e4-4e18-b607-9e96badb8d76
+	fromColumn: 'public airports'.state_id
+	toColumn: 'public state'.id
+
+	annotation PBI_IsFromSource = FS
+
+relationship f89fa283-9108-4a25-8d0d-d7f4d2954719
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'public domestic'.airport_id
+	toColumn: 'public airports'.id
+
+	annotation PBI_IsFromSource = FS
+
+relationship d155d96c-ad97-42ec-b89e-4008ba5ecdb1
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'public international'.airport_id
+	toColumn: 'public airports'.id
+
+	annotation PBI_IsFromSource = FS
+
+relationship 2618302e-2c87-4e8a-807d-f1afab174403
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'public total'.airport_id
+	toColumn: 'public airports'.id
+
+	annotation PBI_IsFromSource = FS
+

@@ -1,0 +1,23 @@
+model Model
+	culture: es-VE
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["public airports","public city","public domestic","public international","public state","public total"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'public airports'
+ref table 'public city'
+ref table 'public domestic'
+ref table 'public international'
+ref table 'public state'
+ref table 'public total'
+
+ref cultureInfo es-VE
+
