@@ -13,30 +13,11 @@ key: str | None = os.environ.get("SUPABASE_KEY")
 # Inicializar supabase como None
 supabase = None
 
-# Solo crear el cliente si tenemos las credenciales
-if url and key:
-    try:
-        # Importar después de verificar credenciales
-        from supabase import create_client, Client
-        supabase: Client = create_client(url, key)
-        print("✅ Cliente Supabase creado exitosamente")
-    except Exception as e:
-        print(f"❌ Error creando cliente Supabase: {e}")
-        # Mostrar error más específico
-        if "proxy" in str(e):
-            print("🔧 Solución: Ejecuta 'pip install supabase==1.0.3'")
-else:
-    print("⚠️  Credenciales de Supabase no encontradas")
-
 @st.cache_data
 def obtener_datos(tabla):
     """
     Obtiene datos de una tabla específica desde Supabase y los devuelve como DataFrame.
     """
-    if supabase is None:
-        st.error("❌ No hay conexión a la base de datos. Verifica tus credenciales en el archivo .env")
-        return pd.DataFrame()
-    
     try:
         # Para tablas que tienen airport_id, hacer JOIN con airports
         if tabla in ['domestic', 'international', 'total']:
