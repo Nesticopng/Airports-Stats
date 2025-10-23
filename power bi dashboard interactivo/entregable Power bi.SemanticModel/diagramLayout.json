@@ -1,0 +1,100 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 22,
+        "y": 2
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 334.22260213574646,
+            "y": 262.779840629054
+          },
+          "nodeIndex": "public airports",
+          "nodeLineageTag": "d1064209-583c-4b85-9f58-95b880f60ae8",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 152.75425868435116,
+            "y": 538.95729558579342
+          },
+          "nodeIndex": "public city",
+          "nodeLineageTag": "5d12f3c9-4a03-4a22-b4a8-ce0d12113ccd",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 334.23339958550514,
+            "y": -50
+          },
+          "nodeIndex": "public domestic",
+          "nodeLineageTag": "bc8fa429-68a5-422f-ad70-13ce615d86bd",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 526.38528083452707,
+            "y": 538.975840127097
+          },
+          "nodeIndex": "public international",
+          "nodeLineageTag": "981e8e2a-578f-4086-a87f-af4d030b0552",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 618.45556218231286,
+            "y": 206.75878822943355
+          },
+          "nodeIndex": "public state",
+          "nodeLineageTag": "70deb32e-b80c-4aad-83f5-ec37966a57fc",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 50.000000000000014,
+            "y": 147.78262049629075
+          },
+          "nodeIndex": "public total",
+          "nodeLineageTag": "b08636cc-9acc-431b-9c5a-6085e50bde9c",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Todas las tablas",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas las tablas",
+  "defaultDiagram": "Todas las tablas"
+}
