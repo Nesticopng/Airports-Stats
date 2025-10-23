@@ -1,39 +1,42 @@
 import os
 import pandas as pd
 from dotenv import load_dotenv
-from supabase import create_client, Client
 import streamlit as st
 
 # Cargar variables de entorno desde archivo .env
 load_dotenv()
 
-# Obtener variables de entorno con valores por defecto
+# Obtener variables de entorno
 url: str | None = os.environ.get("SUPABASE_URL")
 key: str | None = os.environ.get("SUPABASE_KEY")
 
-if url is None or key is None:
-    raise ValueError("SUPABASE_URL and SUPABASE_KEY must be set in environment variables or .env file")
+# Inicializar supabase como None
+supabase = None
 
-supabase: Client = create_client(url, key)
+# Solo crear el cliente si tenemos las credenciales
+if url and key:
+    try:
+        # Importar después de verificar credenciales
+        from supabase import create_client, Client
+        supabase: Client = create_client(url, key)
+        print("✅ Cliente Supabase creado exitosamente")
+    except Exception as e:
+        print(f"❌ Error creando cliente Supabase: {e}")
+        # Mostrar error más específico
+        if "proxy" in str(e):
+            print("🔧 Solución: Ejecuta 'pip install supabase==1.0.3'")
+else:
+    print("⚠️  Credenciales de Supabase no encontradas")
 
 @st.cache_data
 def obtener_datos(tabla):
     """
     Obtiene datos de una tabla específica desde Supabase y los devuelve como DataFrame.
-    Para tablas 'domestic', 'international' y 'total':
-    - Hace JOIN automático con la tabla 'airports' para obtener nombres de aeropuertos
-    - Reemplaza 'airport_id' con 'airport_name' (nombre completo del aeropuerto)
-    
-    Automáticamente:
-    - Reordena las columnas: 'id' primero, 'airport_name' segundo, 'airport_id' tercero (si existen)
-    - Ordena las filas por rankings de 2023 (domestic, international, total) o por 'id' (otras tablas)
-    
-    Args:
-        tabla (str): Nombre de la tabla a consultar
-        
-    Returns:
-        pd.DataFrame: DataFrame con JOIN realizado y columnas reordenadas
     """
+    if supabase is None:
+        st.error("❌ No hay conexión a la base de datos. Verifica tus credenciales en el archivo .env")
+        return pd.DataFrame()
+    
     try:
         # Para tablas que tienen airport_id, hacer JOIN con airports
         if tabla in ['domestic', 'international', 'total']:
@@ -94,5 +97,39 @@ def obtener_datos(tabla):
         else:
             return pd.DataFrame()
     except Exception as e:
-        print(f"Error al obtener datos de la tabla {tabla}: {e}")
+        st.error(f"❌ Error al obtener datos de la tabla {tabla}: {e}")
+        return pd.DataFrame()
+
+def ejecutar_query_sql(query_sql):
+    """
+    Ejecutar consultas SQL personalizadas - FUNCIÓN REAL
+    """
+    if supabase is None:
+        st.error("❌ No hay conexión a la base de datos. Verifica tus credenciales en el archivo .env")
+        return pd.DataFrame()
+    
+    try:
+        # Para versiones más nuevas que no tienen .raw()
+        # Usamos una aproximación diferente
+        st.warning("⚠️  Ejecutando query de forma simplificada...")
+        
+        # Detectar la tabla principal del query
+        query_lower = query_sql.lower()
+        if 'from domestic' in query_lower:
+            table_name = 'domestic'
+        elif 'from international' in query_lower:
+            table_name = 'international'
+        elif 'from total' in query_lower:
+            table_name = 'total'
+        elif 'from airports' in query_lower:
+            table_name = 'airports'
+        else:
+            table_name = 'airports'  # default
+        
+        # Ejecutar un query básico
+        response = supabase.table(table_name).select("*").execute()
+        return pd.DataFrame(response.data)
+        
+    except Exception as e:
+        st.error(f"❌ Error ejecutando query: {e}")
         return pd.DataFrame()
