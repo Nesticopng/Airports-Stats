@@ -137,8 +137,8 @@ if not df_top_20.empty:
         # El cambio de ranking será negativo, se muestra así directamente.
         delta=f"{int(mayor_caida['Cambio Ranking'])} puestos" 
     )
-    st.write("""Para la fundamentacion legal del proyecto se citaran leyes pertenecientes al Los Estados Unidos como soporte a la investigacion.
-""")
+    st.write("""Es muy importante resaltar en presente ranking aquellas metricas extremas que se han presentado en los aeropuertos como en el caso del San Francisco, CA: San Francisco International
+    con el mayor cambio porcentual de pasajeros del año 2022 al 2023 y otra metrica extrema resaltante son las de los aeropuertos Miami, FL: Miami International y Phoenix, AZ: Phoenix Sky Harbor International que bajaron dos (2) puestos en el ranking de aeropuertos con mas pasajeros """)
     st.markdown("---")
 
     # 3.2. Estadísticas Descriptivas Avanzadas (TABLA ÚNICA Y COMPLETA)
@@ -147,11 +147,14 @@ if not df_top_20.empty:
 
     stats_df_completa = generar_tabla_estadisticas(df_completo)
     st.dataframe(stats_df_completa, use_container_width=True)
-
+    st.write(""" .
+""")
     st.markdown("---")
     
     # 3.3. Histogramas de Frecuencia
     st.header("📈 Distribución de Frecuencia de Pasajeros y Crecimiento")
+    st.write(""" .
+""")
     st.markdown("Los histogramas muestran cómo se agrupan los datos en diferentes rangos para **todos** los aeropuertos.")
     
     # Histograma 1: Pasajeros 2023
@@ -164,6 +167,8 @@ if not df_top_20.empty:
     )
     fig_hist_2023.update_layout(bargap=0.1)
     st.plotly_chart(fig_hist_2023, use_container_width=True)
+    st.write(""" .
+""")
 
     # Histograma 2: Pasajeros 2022
     fig_hist_2022 = px.histogram(
@@ -175,6 +180,8 @@ if not df_top_20.empty:
     )
     fig_hist_2022.update_layout(bargap=0.1)
     st.plotly_chart(fig_hist_2022, use_container_width=True)
+    st.write(""" .
+""")
 
     # Histograma 3: Crecimiento Porcentual
     fig_hist_crecimiento = px.histogram(
@@ -188,6 +195,8 @@ if not df_top_20.empty:
     fig_hist_crecimiento.update_layout(bargap=0.1)
     st.plotly_chart(fig_hist_crecimiento, use_container_width=True)
 
+    st.write(""" .
+""")
     st.markdown("---")
 
     # 3.4. Tabla de Datos Detallada (Top 20)
@@ -200,7 +209,8 @@ if not df_top_20.empty:
     df_mostrar['Crecimiento (%)'] = df_mostrar['Crecimiento (%)'].map('{:.2f}%'.format)
 
     st.dataframe(df_mostrar, use_container_width=True)
-
+    st.write(""" .
+""")
     st.markdown("---")
     
 
