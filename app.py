@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 from utils.database import obtener_datos
 
 # Configurar la página
