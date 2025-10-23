@@ -77,3 +77,4 @@ else:
 # Footer
 st.markdown("---")
 st.markdown("📊 **✈️ Análisis exploratorio de tráfico aéreo en EE.UU 2022-2023** - Grupo 5 (Computación 2) - Universidad Central de Venezuela")
+
