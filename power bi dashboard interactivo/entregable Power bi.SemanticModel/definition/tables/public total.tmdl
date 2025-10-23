@@ -1,0 +1,78 @@
+table 'public total'
+	lineageTag: b08636cc-9acc-431b-9c5a-6085e50bde9c
+
+	column 2023_rank_total
+		dataType: int64
+		formatString: 0
+		lineageTag: 249c9e44-a455-43d7-b1a6-fe1a2fe7379e
+		summarizeBy: sum
+		sourceColumn: 2023_rank_total
+
+		annotation SummarizationSetBy = Automatic
+
+	column percentage_change_2022_2023_total
+		dataType: double
+		lineageTag: b526537c-1cf2-4afc-b1bd-2712a58e18ed
+		summarizeBy: sum
+		sourceColumn: percentage_change_2022_2023_total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 2023_enplaned_passengers_total
+		dataType: int64
+		formatString: 0
+		lineageTag: 6256189e-baa4-47e4-8ad9-b7d6ffe3be62
+		summarizeBy: sum
+		sourceColumn: 2023_enplaned_passengers_total
+
+		annotation SummarizationSetBy = Automatic
+
+	column 2022_rank_total
+		dataType: int64
+		formatString: 0
+		lineageTag: 80f7e78e-6787-460e-83bf-3386714a34e7
+		summarizeBy: sum
+		sourceColumn: 2022_rank_total
+
+		annotation SummarizationSetBy = Automatic
+
+	column 2022_enplaned_passengers_total
+		dataType: int64
+		formatString: 0
+		lineageTag: a3935f1c-171b-4dfd-a189-a307479edf21
+		summarizeBy: sum
+		sourceColumn: 2022_enplaned_passengers_total
+
+		annotation SummarizationSetBy = Automatic
+
+	column id
+		dataType: int64
+		formatString: 0
+		lineageTag: 69eb68f1-d3c6-43cf-907c-151a8ce392d9
+		summarizeBy: sum
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column airport_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 8dce4961-3a53-49ed-bb75-6eafef071a57
+		summarizeBy: none
+		sourceColumn: airport_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'public total' = m
+		mode: import
+		source =
+				let
+				    Origen = PostgreSQL.Database("aws-1-sa-east-1.pooler.supabase.com", "postgres"),
+				    public_total = Origen{[Schema="public",Item="total"]}[Data]
+				in
+				    public_total
+
+	annotation PBI_ResultType = Table
+

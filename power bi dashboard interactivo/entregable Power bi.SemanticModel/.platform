@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "entregable Power bi"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "31098f07-57f9-465f-967c-7a185a80b539"
+  }
+}

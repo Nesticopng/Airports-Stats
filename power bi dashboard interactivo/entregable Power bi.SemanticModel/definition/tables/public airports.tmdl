@@ -1,0 +1,65 @@
+table 'public airports'
+	lineageTag: d1064209-583c-4b85-9f58-95b880f60ae8
+
+	column id
+		dataType: int64
+		formatString: 0
+		lineageTag: 72dd89b6-07a8-4216-8852-ca83cd426f63
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column iata_code
+		dataType: string
+		lineageTag: d587163e-c254-474c-a2c0-618e990fe0fd
+		summarizeBy: none
+		sourceColumn: iata_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column name
+		dataType: string
+		lineageTag: b7cfaf94-3a06-4309-9dda-3a276eb3260f
+		summarizeBy: none
+		sourceColumn: name
+
+		annotation SummarizationSetBy = Automatic
+
+	column airport
+		dataType: string
+		lineageTag: 92edd507-1fd5-4225-a2d0-b2bc7c947803
+		summarizeBy: none
+		sourceColumn: airport
+
+		annotation SummarizationSetBy = Automatic
+
+	column state_id
+		dataType: int64
+		formatString: 0
+		lineageTag: b3f08d2a-ab7a-487b-a38b-8a3471d8d569
+		summarizeBy: none
+		sourceColumn: state_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column city_id
+		dataType: int64
+		formatString: 0
+		lineageTag: 98ef5786-826a-49b0-9f0e-24a3b23e4f3b
+		summarizeBy: none
+		sourceColumn: city_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'public airports' = m
+		mode: import
+		source =
+				let
+				    Origen = PostgreSQL.Database("aws-1-sa-east-1.pooler.supabase.com", "postgres"),
+				    public_airports = Origen{[Schema="public",Item="airports"]}[Data]
+				in
+				    public_airports
+
+	annotation PBI_ResultType = Table
+
