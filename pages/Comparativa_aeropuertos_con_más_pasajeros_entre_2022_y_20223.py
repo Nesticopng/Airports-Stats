@@ -6,7 +6,7 @@ import numpy as np
 
 # Configurar la página
 st.set_page_config(
-    page_title="Aeropuertos con mayor y menor porcentaje de crecimiento entre los años 2022 - 2023",
+    page_title="Comparativa del ranking de aeropuertos con mayor cantidad de pasajeron entre 2022 y 2023",
     page_icon="✈️",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -15,8 +15,6 @@ st.set_page_config(
 # Título principal
 st.title("✈️ Análisis Exploratorio de Tráfico Aéreo Global 2022-2023")
 st.markdown("---")
-
-# --- 1. Obtención y Preparación de Datos ---
 
 @st.cache_data
 def load_and_process_data():
@@ -65,7 +63,7 @@ def load_and_process_data():
 
 df_top_20, df_completo = load_and_process_data()
 
-# --- 2. Funciones para Estadísticas Descriptivas Avanzadas ---
+# --- 2. Funciones para Estadísticas Descriptivas  ---
 
 def calcular_estadisticas_avanzadas(series):
     """Calcula la asimetría, curtosis y coeficiente de variación."""
@@ -113,11 +111,11 @@ def generar_tabla_estadisticas(df):
     return stats_df
 
 
-# --- 3. Interfaz de Streamlit ---
+# --- 3. Streamlit ---
 
 if not df_top_20.empty:
     
-    # 3.1. Métricas Clave (SOLO MAYOR CRECIMIENTO Y MAYOR CAÍDA)
+    # 3.1. Métricas Clave 
     # Usaremos solo 2 columnas para estas 2 métricas.
     col1, col_vacio, col2 = st.columns([1, 0.5, 1])
     
@@ -137,8 +135,8 @@ if not df_top_20.empty:
         # El cambio de ranking será negativo, se muestra así directamente.
         delta=f"{int(mayor_caida['Cambio Ranking'])} puestos" 
     )
-    st.write("""Es muy importante resaltar en presente ranking aquellas metricas extremas que se han presentado en los aeropuertos como en el caso del San Francisco, CA: San Francisco International
-    con el mayor cambio porcentual de pasajeros del año 2022 al 2023 y otra metrica extrema resaltante son las de los aeropuertos Miami, FL: Miami International y Phoenix, AZ: Phoenix Sky Harbor International que bajaron dos (2) puestos en el ranking de aeropuertos con mas pasajeros """)
+    st.write("""Es muy importante resaltar en presente ranking aquellas métricas extremas que se han presentado en los aeropuertos como en el caso del San Francisco, CA: San Francisco International
+    con el mayor cambio porcentual de pasajeros del año 2022 al 2023 y otra métrica extrema resaltante son las de los aeropuertos Miami, FL: Miami International y Phoenix, AZ: Phoenix Sky Harbor International que bajaron dos (2) puestos en el ranking de aeropuertos con más pasajeros """)
     st.markdown("---")
 
     # 3.2. Estadísticas Descriptivas Avanzadas (TABLA ÚNICA Y COMPLETA)
