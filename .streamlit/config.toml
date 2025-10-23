@@ -1,0 +1,15 @@
+# .streamlit/config.toml - Paleta Audaz
+
+[theme]
+# Colores oscuros audaces
+backgroundColor="#0F1A3A" 
+secondaryBackgroundColor="#2D3958" 
+
+# Color de acento brillante
+primaryColor="#FFC107" 
+
+# Texto claro para fondo oscuro
+textColor="#F0F2F6" 
+
+# Fuente Times New Roman (Serif)
+font="serif"
