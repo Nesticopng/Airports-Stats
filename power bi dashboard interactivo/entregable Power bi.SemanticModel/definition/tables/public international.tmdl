@@ -1,0 +1,78 @@
+table 'public international'
+	lineageTag: 981e8e2a-578f-4086-a87f-af4d030b0552
+
+	column 2023_rank_inter
+		dataType: int64
+		formatString: 0
+		lineageTag: e9f5979a-bc22-4be1-9ccc-d60343bb3e5b
+		summarizeBy: sum
+		sourceColumn: 2023_rank_inter
+
+		annotation SummarizationSetBy = Automatic
+
+	column 2022_rank_inter
+		dataType: int64
+		formatString: 0
+		lineageTag: d21d7c17-6999-4fd7-993d-e89e994eed05
+		summarizeBy: sum
+		sourceColumn: 2022_rank_inter
+
+		annotation SummarizationSetBy = Automatic
+
+	column percentage_change_2022_2023_inter
+		dataType: double
+		lineageTag: 65f5b7cd-ded2-4556-b1b2-16d4a9d4116b
+		summarizeBy: sum
+		sourceColumn: percentage_change_2022_2023_inter
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 2023_enplaned_passengers_inter
+		dataType: int64
+		formatString: 0
+		lineageTag: e235168e-c179-48de-abb3-814d26667568
+		summarizeBy: sum
+		sourceColumn: 2023_enplaned_passengers_inter
+
+		annotation SummarizationSetBy = Automatic
+
+	column 2022_enplaned_passengers_inter
+		dataType: int64
+		formatString: 0
+		lineageTag: 5e3a12bc-5c6c-4ea7-bccb-7321b784859e
+		summarizeBy: sum
+		sourceColumn: 2022_enplaned_passengers_inter
+
+		annotation SummarizationSetBy = Automatic
+
+	column id
+		dataType: int64
+		formatString: 0
+		lineageTag: d0fe5ee6-a6ab-419e-9ff1-26474ca851be
+		summarizeBy: sum
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column airport_id
+		dataType: int64
+		formatString: 0
+		lineageTag: ed7e6907-90c9-4fb4-a1d5-74442cc8719d
+		summarizeBy: none
+		sourceColumn: airport_id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'public international' = m
+		mode: import
+		source =
+				let
+				    Origen = PostgreSQL.Database("aws-1-sa-east-1.pooler.supabase.com", "postgres"),
+				    public_international = Origen{[Schema="public",Item="international"]}[Data]
+				in
+				    public_international
+
+	annotation PBI_ResultType = Table
+
