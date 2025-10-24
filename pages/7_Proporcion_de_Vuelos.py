@@ -377,3 +377,21 @@ if len(df_filtrado) > 0:
         
         st.plotly_chart(fig_individual, use_container_width=True)
 
+# Información adicional
+st.markdown("---")
+st.markdown("### ℹ️ Información sobre las Clasificaciones")
+
+with st.expander("Explicación de las clasificaciones de aeropuertos"):
+    st.markdown("""
+    **Clasificaciones por Tipo de Tráfico:**
+    
+    - **Predominantemente Doméstico** (≥90% doméstico): Aeropuertos que manejan principalmente vuelos nacionales
+    - **Predominantemente Internacional** (≥90% internacional): Aeropuertos con enfoque en vuelos internacionales
+    - **Mayormente Doméstico** (70-89% doméstico): Aeropuertos con mayoría doméstica pero con presencia internacional
+    - **Mayormente Internacional** (70-89% internacional): Aeropuertos con mayoría internacional pero con tráfico doméstico
+    - **Balanceado-Doméstico** (60-69% doméstico): Aeropuertos con distribución relativamente equilibrada, tendiendo a doméstico
+    - **Balanceado-Internacional** (60-69% internacional): Aeropuertos con distribución relativamente equilibrada, tendiendo a internacional
+    - **Balanceado** (40-59% cada uno): Aeropuertos con distribución muy equilibrada entre doméstico e internacional
+    
+    **Nota:** Los porcentajes se calculan basándose en el número de pasajeros en vuelos domésticos vs internacionales.
+    """)
