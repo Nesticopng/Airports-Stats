@@ -233,7 +233,7 @@ if not df_top_20.empty:
     
     st.plotly_chart(fig_scatter, use_container_width=True)
     st.write("""Y como último se tiene un grafico que resume todo lo investigado respecto al ranking de aeropuertos con mayor cantidad de pasajeros en el eje x se ve la cantidad de pasajeros en el año 2023 en el eje y el cambio porcentual respecto al año 2022, y el tamaño de el circulo indica también la cantidad de pasajeros en el año 2022.
-A la derecha del grafico se tiene la leyenda con el ranking de aeropuertos ordenados respectivamente con el color que lo representa en el grafico.
+A la derecha del grafico se tiene la leyenda con el ranking de aeropuertos ordenados con su respectivo puesto, y el color representa el aeropuerto en el grafico.
 """)
 
 else:
