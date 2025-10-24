@@ -17,7 +17,7 @@ st.markdown("---")
 # ========== OPCIÓN 1: PESTAÑAS SIMPLES QUE SÍ FUNCIONAN ==========
 menu = st.radio(
     "¿Qué quieres ver?",
-    ["📊 Datos Predefinidos", "🔍 Consultas SQL"],
+    ["📊 Datos Predefinidos", "🔍 Cuestionario SQL"],
     horizontal=True
 )
 
@@ -83,24 +83,24 @@ if menu == "📊 Datos Predefinidos":
     else:
         st.error(f"❌ No se pudieron cargar los datos de la tabla '{tabla_seleccionada}'")
 
-# ========== OPCIÓN 2: CONSULTAS SQL REALES ==========
-elif menu == "🔍 Consultas SQL":
-    st.subheader("🔍 Consultas SQL - EJECUCIÓN REAL")
+# ========== OPCIÓN 2: Cuestionario SQL ==========
+elif menu == "🔍 Cuestionario SQL":
+    st.subheader("🔍 Cuestionario SQL")
     
     # Crear pestañas para los diferentes tipos de consultas
-    tab_queries, tab_custom = st.tabs(["🚀 Queries Predefinidos", "📝 SQL Personalizado"])
+    tab_queries, tab_custom = st.tabs(["🚀 Querys", "📝 SQL Personalizado"])
     
     # ========== PESTAÑA 1: QUERIES PREDEFINIDOS ==========
     with tab_queries:
-        st.write("**Selecciona una consulta predefinida para ejecutar:**")
+        st.write("**Selecciona una consulta del cuestionario para ejecutar:**")
         
         # Selector de queries predefinidos
         query_seleccionado = st.selectbox(
             "Consultas disponibles:",
             [
                 "🏆 Top 10 - Mayor Crecimiento Doméstico 2022-2023",
-                "📈 Aeropuertos con Crecimiento >20% Doméstico",
-                "🌎 Participación de Pasajeros Internacionales por Aeropuerto",
+                "📈 Aeropuertos con Crecimiento mayor a 20% Doméstico",
+                "🌎 Proporcion de Pasajeros Internacionales",
                 "🗺️ Top 5 Estados con Más Pasajeros Totales", 
                 "⬆️ Aeropuertos que Mejoraron su Ranking Total"
             ]
