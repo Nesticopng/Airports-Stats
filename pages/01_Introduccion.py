@@ -14,7 +14,7 @@ st.title("✈️ Análisis exploratorio de tráfico aéreo en EE.UU 2022-2023")
 st.markdown("---")
 
 # Tab 1: Datos Completos
-st.subheader("Itroducción")
+st.subheader("Introducción")
 st.write("""El transporte aéreo es, indiscutiblemente, un pilar neurálgico para la economía global y, particularmente, para la infraestructura de los Estados Unidos. Los aeropuertos de la nación no son meros puntos de tránsito, sino complejos centros de actividad económica y conectividad que sustentan el comercio, el turismo y las relaciones internacionales. En este sentido, la gestión, planificación y expansión de la capacidad aeroportuaria dependen directamente de un conocimiento granular y preciso de las dinámicas de flujo de pasajeros. Sin este conocimiento, las inversiones en infraestructura y las decisiones operativas se basan en conjeturas, introduciendo una incertidumbre significativa en un sector de altísimo costo y vital importancia estratégica.
 """)
 st.write("""El período comprendido entre los años 2022 y 2023 reviste una importancia histórica y económica singular. Tras los profundos trastornos generados por la pandemia global, estos años marcan una fase crucial de recuperación y reajuste en la movilidad aérea. El comportamiento del tráfico durante este lapso no solo refleja la resiliencia del sector, sino también la efectividad de las políticas de reapertura y los cambios en los hábitos de viaje. Sin embargo, no todos los segmentos de pasajeros se han recuperado o evolucionado de manera uniforme.
