@@ -1,6 +1,6 @@
 import streamlit as st
 from utils.database import obtener_datos
-import plotly.express as px
+import plotly.express as px # type: ignore
 import pandas as pd
 
 # Configurar la página
@@ -213,14 +213,14 @@ elif flujo_seleccionado == 'international':
                 
         st.markdown(f"""
                     Los aeropuertos que tuvieron un mayor porcentaje de crecimiento de pasajeros entre los años 2022 y 2023 fueron:
-                    + Francisco C. Ada Saipan International (445,29%)
-                    + Ontario International (125,73%)
-                    + Guam International (113,53%)
+                    + Francisco C. Ada Saipan International (445.29%)
+                    + Ontario International (125.73%)
+                    + Guam International (113.53%)
 
                     Los aeropuertos que tuvieron un menor porcentaje de crecimiento de pasajeros entre los años 2022 y 2023 fueron:
-                    + William P Hobby (5,39%)
-                    + Fresno YTosemite International (2,82%)
-                    + Kakului Airport (2,34%)
+                    + William P Hobby (5.39%)
+                    + Fresno YTosemite International (2.82%)
+                    + Kakului Airport (2.34%)
                     """)
     
 elif flujo_seleccionado == 'domestic':
@@ -228,13 +228,13 @@ elif flujo_seleccionado == 'domestic':
         st.markdown(f"""
                     Los aeropuertos que tuvieron un mayor porcentaje de crecimiento de pasajeros entre los años 2022 y 2023 fueron:
                     + Provo Municipal (96.65%)
-                    + Tweed New Haven (39,26%)
-                    + Brownsville South Padre Island International (35,59%)
+                    + Tweed New Haven (39.26%)
+                    + Brownsville South Padre Island International (35.59%)
 
                     Los aeropuertos que tuvieron un menor porcentaje de crecimiento de pasajeros entre los años 2022 y 2023 fueron:
-                    + Scott AFB MidAmerica St Louis (-9,38%)
-                    + Kahului Airport (-9,6%)
-                    + Idaho Falls Ragional (-12,45%)
+                    + Scott AFB MidAmerica St Louis (-9.38%)
+                    + Kahului Airport (-9.6%)
+                    + Idaho Falls Regional (-12.45%)
                     """)
             
 

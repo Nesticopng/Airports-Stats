@@ -1,8 +1,7 @@
 import streamlit as st
 from utils.database import obtener_datos
 import pandas as pd
-import plotly.express as px
-import numpy as np
+import plotly.express as px # type: ignore
 
 # Configurar la página
 st.set_page_config(

@@ -1,5 +1,4 @@
 import streamlit as st
-from utils.database import obtener_datos
 
 # Configurar la página
 st.set_page_config(
