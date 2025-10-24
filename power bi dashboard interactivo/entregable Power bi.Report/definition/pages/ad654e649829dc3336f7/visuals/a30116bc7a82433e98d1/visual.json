@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "a30116bc7a82433e98d1",
   "position": {
-    "x": 46.940352304023953,
-    "y": 216.53130256372339,
-    "z": 4003,
-    "height": 227.13073695495461,
-    "width": 552.68479325705619,
-    "tabOrder": 4003
+    "x": 598.56830215319451,
+    "y": 492.84292269678787,
+    "z": 6000,
+    "height": 227.71620190610662,
+    "width": 671.76279562301454,
+    "tabOrder": 6000
   },
   "visual": {
     "visualType": "tableEx",
@@ -74,13 +74,18 @@
         "sort": [
           {
             "field": {
-              "Column": {
+              "Aggregation": {
                 "Expression": {
-                  "SourceRef": {
-                    "Entity": "public airports"
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "public international"
+                      }
+                    },
+                    "Property": "2023_enplaned_passengers_inter"
                   }
                 },
-                "Property": "iata_code"
+                "Function": 0
               }
             },
             "direction": "Ascending"
@@ -95,7 +100,7 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "205.47202254997705D"
+                  "Value": "261.3697948167113D"
                 }
               }
             }
@@ -130,6 +135,135 @@
           },
           "selector": {
             "metadata": "public airports.iata_code"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "6D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "6D"
+                }
+              }
+            },
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#D90C98'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "3D"
+                }
+              }
+            },
+            "foreground": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#8250C4'"
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       ]
