@@ -100,7 +100,7 @@ elif menu == "🔍 Cuestionario SQL":
             [
                 "🏆 Top 10 - Mayor Crecimiento Doméstico 2022-2023",
                 "📈 Aeropuertos con Crecimiento mayor a 20% Doméstico",
-                "🌎 Proporcion de Pasajeros Internacionales",
+                "🌎 Proporción de Pasajeros Internacionales",
                 "🗺️ Top 5 Estados con Más Pasajeros Totales", 
                 "⬆️ Aeropuertos que Mejoraron su Ranking Total"
             ]
