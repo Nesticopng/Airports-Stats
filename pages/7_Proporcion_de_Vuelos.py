@@ -317,17 +317,7 @@ with tab3:
             color_discrete_sequence=['#1f77b4', '#ff7f0e']
         )
         st.plotly_chart(fig_torta_vuelos, use_container_width=True)
-    
-    with col2:
-        # Gráfico de torta para clasificaciones
-        clasificacion_counts = df_filtrado['clasificacion'].value_counts()
-        fig_torta_clasificacion = px.pie(
-            values=clasificacion_counts.values,
-            names=clasificacion_counts.index,
-            title=f'Distribución por Clasificación - {año_seleccionado}',
-            color_discrete_sequence=px.colors.qualitative.Set3
-        )
-        st.plotly_chart(fig_torta_clasificacion, use_container_width=True)
+ 
 
 # Análisis de aeropuertos específicos
 if len(df_filtrado) > 0:
@@ -387,21 +377,3 @@ if len(df_filtrado) > 0:
         
         st.plotly_chart(fig_individual, use_container_width=True)
 
-# Información adicional
-st.markdown("---")
-st.markdown("### ℹ️ Información sobre las Clasificaciones")
-
-with st.expander("Explicación de las clasificaciones de aeropuertos"):
-    st.markdown("""
-    **Clasificaciones por Tipo de Tráfico:**
-    
-    - **Predominantemente Doméstico** (≥90% doméstico): Aeropuertos que manejan principalmente vuelos nacionales
-    - **Predominantemente Internacional** (≥90% internacional): Aeropuertos con enfoque en vuelos internacionales
-    - **Mayormente Doméstico** (70-89% doméstico): Aeropuertos con mayoría doméstica pero con presencia internacional
-    - **Mayormente Internacional** (70-89% internacional): Aeropuertos con mayoría internacional pero con tráfico doméstico
-    - **Balanceado-Doméstico** (60-69% doméstico): Aeropuertos con distribución relativamente equilibrada, tendiendo a doméstico
-    - **Balanceado-Internacional** (60-69% internacional): Aeropuertos con distribución relativamente equilibrada, tendiendo a internacional
-    - **Balanceado** (40-59% cada uno): Aeropuertos con distribución muy equilibrada entre doméstico e internacional
-    
-    **Nota:** Los porcentajes se calculan basándose en el número de pasajeros en vuelos domésticos vs internacionales.
-    """)
