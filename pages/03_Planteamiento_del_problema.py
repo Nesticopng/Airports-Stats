@@ -18,4 +18,3 @@ st.subheader("planteamiento del problema")
 st.markdown("---")
 st.write(""".
 """)
-s
