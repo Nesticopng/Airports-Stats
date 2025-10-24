@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
   "name": "a3f034876f8019272712",
   "position": {
-    "x": 657.16493225633531,
-    "y": 216.53130256372339,
-    "z": 4002,
-    "height": 227.13073695495461,
-    "width": 498.17341638786712,
-    "tabOrder": 4002
+    "x": 592.054120995915,
+    "y": 228.64494186798763,
+    "z": 5000,
+    "height": 249.84381065045008,
+    "width": 687.44903051699589,
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "tableEx",
@@ -36,17 +36,17 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "public domestic"
+                          "Entity": "public international"
                         }
                       },
-                      "Property": "2022_enplaned_passengers_dom"
+                      "Property": "2022_rank_inter"
                     }
                   },
                   "Function": 0
                 }
               },
-              "queryRef": "Sum(public domestic.2022_enplaned_passengers_dom)",
-              "nativeQueryRef": "Suma de 2022_enplaned_passengers_dom"
+              "queryRef": "Sum(public international.2022_rank_inter)",
+              "nativeQueryRef": "Suma de 2022_rank_inter"
             },
             {
               "field": {
@@ -55,17 +55,36 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "public domestic"
+                          "Entity": "public international"
                         }
                       },
-                      "Property": "2023_enplaned_passengers_dom"
+                      "Property": "2022_enplaned_passengers_inter"
                     }
                   },
                   "Function": 0
                 }
               },
-              "queryRef": "Sum(public domestic.2023_enplaned_passengers_dom)",
-              "nativeQueryRef": "Suma de 2023_enplaned_passengers_dom"
+              "queryRef": "Sum(public international.2022_enplaned_passengers_inter)",
+              "nativeQueryRef": "Suma de 2022_enplaned_passengers_inter"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "public international"
+                        }
+                      },
+                      "Property": "2023_enplaned_passengers_inter"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(public international.2023_enplaned_passengers_inter)",
+              "nativeQueryRef": "Suma de 2023_enplaned_passengers_inter"
             }
           ]
         }
@@ -74,16 +93,21 @@
         "sort": [
           {
             "field": {
-              "Column": {
+              "Aggregation": {
                 "Expression": {
-                  "SourceRef": {
-                    "Entity": "public airports"
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "public international"
+                      }
+                    },
+                    "Property": "2022_enplaned_passengers_inter"
                   }
                 },
-                "Property": "iata_code"
+                "Function": 0
               }
             },
-            "direction": "Ascending"
+            "direction": "Descending"
           }
         ]
       }
@@ -95,41 +119,166 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "168.16987441129768D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Sum(public domestic.2022_enplaned_passengers_dom)"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "191.10854906193768D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "Sum(public domestic.2023_enplaned_passengers_dom)"
-          }
-        },
-        {
-          "properties": {
-            "value": {
-              "expr": {
-                "Literal": {
-                  "Value": "116.40339365261272D"
+                  "Value": "106.67731423887626D"
                 }
               }
             }
           },
           "selector": {
             "metadata": "public airports.iata_code"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "109.09089860906077D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(public international.2022_rank_inter)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "187.65245323810845D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(public international.2022_enplaned_passengers_inter)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "240.34873951369747D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(public international.2023_enplaned_passengers_inter)"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "titleWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "6D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "radius": {
+              "expr": {
+                "Literal": {
+                  "Value": "6D"
+                }
+              }
+            },
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#D90C98'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
           }
         }
       ]
