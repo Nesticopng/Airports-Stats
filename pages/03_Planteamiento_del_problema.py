@@ -14,7 +14,7 @@ st.title("✈️ Análisis exploratorio de tráfico aéreo en EE.UU 2022-2023")
 st.markdown("---")
 
 # Tab 1: Datos Completos
-st.subheader("planteamiento del problema")
+st.subheader("Planteamiento del problema")
 st.markdown("---")
 st.write(""".
 """)
