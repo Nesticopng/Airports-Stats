@@ -93,28 +93,6 @@ def calcular_proporciones_por_aeropuerto(df_domestic, df_international, año):
     df_proporciones['pct_domesticos'] = df_proporciones['pct_domesticos'].fillna(0).round(2)
     df_proporciones['pct_internacionales'] = df_proporciones['pct_internacionales'].fillna(0).round(2)
     
-    # Clasificar aeropuertos por tipo de tráfico
-    def clasificar_aeropuerto(pct_dom, pct_inter):
-        if pct_dom >= 90:
-            return "Predominantemente Doméstico"
-        elif pct_inter >= 90:
-            return "Predominantemente Internacional"
-        elif pct_dom >= 70:
-            return "Mayormente Doméstico"
-        elif pct_inter >= 70:
-            return "Mayormente Internacional"
-        elif pct_dom >= 60:
-            return "Balanceado-Doméstico"
-        elif pct_inter >= 60:
-            return "Balanceado-Internacional"
-        else:
-            return "Balanceado"
-    
-    df_proporciones['clasificacion'] = df_proporciones.apply(
-        lambda row: clasificar_aeropuerto(row['pct_domesticos'], row['pct_internacionales']), 
-        axis=1
-    )
-    
     # Ordenar por total de vuelos descendente
     df_proporciones = df_proporciones.sort_values('total_vuelos', ascending=False).reset_index(drop=True)
     
