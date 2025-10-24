@@ -15,9 +15,10 @@ st.markdown("---")
 
 # Tab 1: Datos Completos
 st.subheader("Bases legales")
-st.markdown("---")
 st.write("""Para la fundamentacion legal del proyecto se citaran leyes pertenecientes al Los Estados Unidos como soporte a la investigacion.
 """)
+st.markdown("---")
+
 st.markdown("**Estatuto Legal (U.S. Code - U.S.C.**)")
 st.write("""Dicho codigo en el titulo 49 en el 49 U.S.C. § 41708 se habla que se le otorga al sercretario de estado la la autoridad para exigir a los transportistas aéreos (aerolíneas) que presenten informes y mantengan registros relacionados con su servicio
 adicional mente el el 49 U.S.C. § 41709 el mismo secretario de estado tiene la misma autoridad para divulgar dichos reportes hechos por las aerolineas.
