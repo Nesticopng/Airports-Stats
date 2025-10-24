@@ -15,6 +15,7 @@ st.markdown("---")
 
 # Tab 1: Datos Completos
 st.subheader("Planteamiento del problema")
-st.markdown("---")
 st.write(""".
 """)
+st.markdown("---")
+

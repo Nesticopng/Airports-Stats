@@ -15,6 +15,7 @@ st.markdown("---")
 
 # Tab 1: Datos Completos
 st.subheader("Marco Teórico")
-st.markdown("---")
 st.write(""".
 """)
+st.markdown("---")
+
