@@ -1,0 +1,139 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "a3f034876f8019272712",
+  "position": {
+    "x": 657.16493225633531,
+    "y": 216.53130256372339,
+    "z": 4002,
+    "height": 227.13073695495461,
+    "width": 498.17341638786712,
+    "tabOrder": 4002
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "public airports"
+                    }
+                  },
+                  "Property": "iata_code"
+                }
+              },
+              "queryRef": "public airports.iata_code",
+              "nativeQueryRef": "iata_code"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "public domestic"
+                        }
+                      },
+                      "Property": "2022_enplaned_passengers_dom"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(public domestic.2022_enplaned_passengers_dom)",
+              "nativeQueryRef": "Suma de 2022_enplaned_passengers_dom"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "public domestic"
+                        }
+                      },
+                      "Property": "2023_enplaned_passengers_dom"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(public domestic.2023_enplaned_passengers_dom)",
+              "nativeQueryRef": "Suma de 2023_enplaned_passengers_dom"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "public airports"
+                  }
+                },
+                "Property": "iata_code"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "168.16987441129768D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(public domestic.2022_enplaned_passengers_dom)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "191.10854906193768D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(public domestic.2023_enplaned_passengers_dom)"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "116.40339365261272D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "public airports.iata_code"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
