@@ -30,10 +30,12 @@ query_seleccionado = st.selectbox(
 if query_seleccionado == "🏆 Top 10 - Mayor Crecimiento Doméstico 2022-2023":
     st.subheader("**Top 10 aeropuertos con mayor aumento en pasajeros domésticos entre 2022 y 2023**")
 
-    tab1, tab2 = st.tabs(["📈 Porcentaje de Crecimiento", "🔢 Incremento Absoluto de Pasajeros"])
+    tab2, tab1 = st.tabs(["🔢 Incremento Absoluto de Pasajeros", "📈 Porcentaje de Crecimiento"])
 
     # ===== TAB 1: PORCENTAJE =====
     with tab1:
+        st.subheader("**Top 10 aeropuertos con mayor incremento porcentual de pasajeros domésticos (2023 vs 2022)**")
+
         with st.expander("🔍 Ver Query SQL", expanded=True):
             st.code("""
 SELECT 
