@@ -29,11 +29,13 @@ query_seleccionado = st.selectbox(
     # QUERY 1: Top 10 crecimiento doméstico
 if query_seleccionado == "🏆 Top 10 - Mayor Crecimiento Doméstico 2022-2023":
     st.subheader("**Top 10 aeropuertos con mayor aumento en pasajeros domésticos entre 2022 y 2023**")
-    
 
-    # Mostrar el query SQL
-    with st.expander("🔍 Ver Query SQL", expanded=True):
-        st.code("""
+    tab1, tab2 = st.tabs(["📈 Porcentaje de Crecimiento", "🔢 Incremento Absoluto de Pasajeros"])
+
+    # ===== TAB 1: PORCENTAJE =====
+    with tab1:
+        with st.expander("🔍 Ver Query SQL", expanded=True):
+            st.code("""
 SELECT 
     a.name,
     d."2022_enplaned_passengers_dom" as 2022_passengers,
@@ -43,49 +45,91 @@ FROM domestic as d
 INNER JOIN airports as a ON d.airport_id = a.id
 ORDER BY percentage_change_2022_2023_dom DESC
 LIMIT 10;
-         """, language='sql')
+            """, language='sql')
         
-    if st.button("🚀 Ejecutar Query", key="query1"):
-        with st.spinner("Ejecutando consulta a Supabase..."):
-            try:
-                # Obtener datos de domestic con JOIN a airports
-                response = supabase.table('domestic').select("*, airports(name)").execute()
-                
-                if response.data:
-                    df = pd.DataFrame(response.data)
-                    
-                    # Expandir la columna airports para obtener el campo name
-                    df['airport_name'] = df['airports'].apply(lambda x: x['name'] if x else None)
-                    
-                    # Seleccionar las columnas necesarias y ordenar por porcentaje de crecimiento
-                    df_resultado = df[['airport_name', '2022_enplaned_passengers_dom', '2023_enplaned_passengers_dom', 'percentage_change_2022_2023_dom']].copy()
-                    df_resultado = df_resultado.rename(columns={
-                        'airport_name': 'name',
-                        '2022_enplaned_passengers_dom': '2022_passengers',
-                        '2023_enplaned_passengers_dom': '2023_passengers',
-                        'percentage_change_2022_2023_dom': 'percentage_change'
-                    })
-                    df_resultado = df_resultado.sort_values('percentage_change', ascending=False).head(10)
-                    df_resultado = df_resultado.reset_index(drop=True)
-                    
-                    st.success(f"✅ Consulta ejecutada exitosamente. {len(df_resultado)} registros encontrados.")
-                    st.dataframe(df_resultado, width='stretch')
-                    
-                    # Botón para descargar resultados reales
-                    csv_real = df_resultado.to_csv(index=False)
-                    st.download_button(
-                        label="📥 Descargar Resultados Reales",
-                        data=csv_real,
-                        file_name="top_10_porcentaje_crecimiento_domestico_real.csv",
-                        mime="text/csv"
-                    )
-                else:
-                    st.warning("⚠️ No se encontraron datos para esta consulta")
-                    
-            except Exception as e:
-                st.error(f"❌ Error al ejecutar consulta: {str(e)}")
-                st.info("💡 **Nota:** Asegúrate de que las tablas 'domestic' y 'airports' existan en Supabase")
-    
+        if st.button("🚀 Ejecutar Query (Porcentaje)", key="query1_percentage"):
+            with st.spinner("Ejecutando consulta a Supabase..."):
+                try:
+                    response = supabase.table('domestic').select("*, airports(name)").execute()
+                    if response.data:
+                        df = pd.DataFrame(response.data)
+                        df['airport_name'] = df['airports'].apply(lambda x: x['name'] if x else None)
+                        df_resultado = df[['airport_name', '2022_enplaned_passengers_dom', '2023_enplaned_passengers_dom', 'percentage_change_2022_2023_dom']].copy()
+                        df_resultado = df_resultado.rename(columns={
+                            'airport_name': 'name',
+                            '2022_enplaned_passengers_dom': '2022_passengers',
+                            '2023_enplaned_passengers_dom': '2023_passengers',
+                            'percentage_change_2022_2023_dom': 'percentage_change'
+                        })
+                        df_resultado = df_resultado.sort_values('percentage_change', ascending=False).head(10).reset_index(drop=True)
+
+                        st.success(f"✅ Consulta ejecutada exitosamente. {len(df_resultado)} registros encontrados.")
+                        st.dataframe(df_resultado, width='stretch')
+
+                        csv_real = df_resultado.to_csv(index=False)
+                        st.download_button(
+                            label="📥 Descargar Resultados (Porcentaje)",
+                            data=csv_real,
+                            file_name="top_10_porcentaje_crecimiento_domestico_real.csv",
+                            mime="text/csv"
+                        )
+                    else:
+                        st.warning("⚠️ No se encontraron datos para esta consulta")
+                except Exception as e:
+                    st.error(f"❌ Error al ejecutar consulta: {str(e)}")
+                    st.info("💡 **Nota:** Asegúrate de que las tablas 'domestic' y 'airports' existan en Supabase")
+
+    # ===== TAB 2: INCREMENTO ABSOLUTO =====
+    with tab2:
+        st.subheader("**Top 10 aeropuertos con mayor incremento absoluto de pasajeros domésticos (2023 vs 2022)**")
+
+        with st.expander("🔍 Ver Query SQL", expanded=True):
+            st.code("""
+SELECT 
+    a.name,
+    d."2022_enplaned_passengers_dom" as 2022_passengers,
+    d."2023_enplaned_passengers_dom" as 2023_passengers,
+    (d."2023_enplaned_passengers_dom" - d."2022_enplaned_passengers_dom") as increase
+FROM domestic as d
+INNER JOIN airports as a ON d.airport_id = a.id
+ORDER BY increase DESC
+LIMIT 10;
+            """, language='sql')
+
+        if st.button("🚀 Ejecutar Query (Incremento Absoluto)", key="query1_absolute"):
+            with st.spinner("Ejecutando consulta a Supabase..."):
+                try:
+                    response = supabase.table('domestic').select("*, airports(name)").execute()
+                    if response.data:
+                        df = pd.DataFrame(response.data)
+                        df['airport_name'] = df['airports'].apply(lambda x: x['name'] if x else None)
+
+                        # Calcular el incremento absoluto
+                        df['increase'] = df['2023_enplaned_passengers_dom'] - df['2022_enplaned_passengers_dom']
+
+                        df_resultado = df[['airport_name', '2022_enplaned_passengers_dom', '2023_enplaned_passengers_dom', 'increase']].copy()
+                        df_resultado = df_resultado.rename(columns={
+                            'airport_name': 'name',
+                            '2022_enplaned_passengers_dom': '2022_passengers',
+                            '2023_enplaned_passengers_dom': '2023_passengers'
+                        })
+                        df_resultado = df_resultado.sort_values('increase', ascending=False).head(10).reset_index(drop=True)
+
+                        st.success(f"✅ Consulta ejecutada exitosamente. {len(df_resultado)} registros encontrados.")
+                        st.dataframe(df_resultado, width='stretch')
+
+                        csv_real = df_resultado.to_csv(index=False)
+                        st.download_button(
+                            label="📥 Descargar Resultados (Incremento Absoluto)",
+                            data=csv_real,
+                            file_name="top_10_incremento_absoluto_domestico_real.csv",
+                            mime="text/csv"
+                        )
+                    else:
+                        st.warning("⚠️ No se encontraron datos para esta consulta")
+                except Exception as e:
+                    st.error(f"❌ Error al ejecutar consulta: {str(e)}")
+                    st.info("💡 **Nota:** Asegúrate de que las tablas 'domestic' y 'airports' existan en Supabase")
 # QUERY 2: Crecimiento >20% doméstico
 elif query_seleccionado == "📈 Aeropuertos con Crecimiento mayor a 20% Doméstico":
     st.subheader("**Aeropuertos donde el tráfico doméstico creció más de un 20% en 2023 respecto a 2022**")
