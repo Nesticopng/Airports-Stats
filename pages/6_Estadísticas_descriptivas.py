@@ -542,60 +542,6 @@ with tab_curtosis:
             año = "2023" if "2023" in col else "2022"
             st.plotly_chart(visualizaciones[f'kurt_{col}'], use_container_width=True)
 
-# Comparación entre años
-if len(columnas_pasajeros) == 2:
-    st.subheader("🔄 Comparación entre Años")
-    
-    col_2023 = columnas_pasajeros[0] if "2023" in columnas_pasajeros[0] else columnas_pasajeros[1]
-    col_2022 = columnas_pasajeros[1] if "2023" in columnas_pasajeros[0] else columnas_pasajeros[0]
-    
-    if col_2023 in df_analisis.columns and col_2022 in df_analisis.columns:
-        # Crear DataFrame para comparación
-        df_comparacion = df_analisis[[col_2023, col_2022]].copy()
-        df_comparacion = df_comparacion.dropna()
-        df_comparacion = df_comparacion[(df_comparacion[col_2023] >= 0) & (df_comparacion[col_2022] >= 0)]
-        
-        if len(df_comparacion) > 0:
-            # Scatter plot de comparación
-            fig_scatter = px.scatter(
-                df_comparacion,
-                x=col_2022,
-                y=col_2023,
-                title=f'Comparación de Pasajeros: 2022 vs 2023 - {tipo_flujo.capitalize()}',
-                labels={
-                    col_2022: 'Pasajeros 2022',
-                    col_2023: 'Pasajeros 2023'
-                },
-                color_discrete_sequence=['#2ca02c']
-            )
-            
-            # Agregar línea de referencia (y = x)
-            max_val = max(df_comparacion[col_2022].max(), df_comparacion[col_2023].max())
-            fig_scatter.add_trace(
-                go.Scatter(
-                    x=[0, max_val],
-                    y=[0, max_val],
-                    mode='lines',
-                    name='Línea de igualdad (y=x)',
-                    line=dict(dash='dash', color='red')
-                )
-            )
-            
-            fig_scatter.update_layout(
-                xaxis_title='Pasajeros 2022',
-                yaxis_title='Pasajeros 2023',
-                showlegend=True
-            )
-            
-            st.plotly_chart(fig_scatter, use_container_width=True)
-            
-            # Calcular correlación
-            correlacion = df_comparacion[col_2022].corr(df_comparacion[col_2023])
-            st.metric(
-                "Correlación entre 2022 y 2023",
-                f"{correlacion:.4f}",
-                help="Correlación de Pearson entre los datos de 2022 y 2023"
-            )
 
 # Información adicional
 st.markdown("---")

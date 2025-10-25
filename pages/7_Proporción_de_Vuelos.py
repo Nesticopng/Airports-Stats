@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from utils.database import obtener_datos
-import plotly.express as px # type: ignore
 import plotly.graph_objects as go # type: ignore
 
 # Configurar la página
@@ -206,7 +205,7 @@ st.markdown("---")
 st.subheader("📈 Análisis Detallado por Aeropuerto")
 
 # Selector de vista usando tabs
-tab1, tab2, tab3 = st.tabs(["📊 Tabla Completa", "📈 Gráfico de Barras", "🥧 Gráfico de Pie"])
+tab1, tab2 = st.tabs(["📊 Tabla Completa", "📈 Gráfico de Barras"])
 
 with tab1:
     # Mostrar tabla completa
@@ -301,33 +300,6 @@ with tab2:
     )
     
     st.plotly_chart(fig, use_container_width=True)
-
-with tab3:
-    # Gráfico de torta para distribución global
-    st.markdown(f"### Distribución Global - {año_seleccionado}")
-    
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        # Gráfico de torta para vuelos totales
-        fig_torta_vuelos = px.pie(
-            values=[total_domestic, total_international],
-            names=['Domésticos', 'Internacionales'],
-            title=f'Distribución Global de Vuelos - {año_seleccionado}',
-            color_discrete_sequence=['#1f77b4', '#ff7f0e']
-        )
-        st.plotly_chart(fig_torta_vuelos, use_container_width=True)
-    
-    with col2:
-        # Gráfico de torta para clasificaciones
-        clasificacion_counts = df_filtrado['clasificacion'].value_counts()
-        fig_torta_clasificacion = px.pie(
-            values=clasificacion_counts.values,
-            names=clasificacion_counts.index,
-            title=f'Distribución por Clasificación - {año_seleccionado}',
-            color_discrete_sequence=px.colors.qualitative.Set3
-        )
-        st.plotly_chart(fig_torta_clasificacion, use_container_width=True)
 
 # Análisis de aeropuertos específicos
 if len(df_filtrado) > 0:

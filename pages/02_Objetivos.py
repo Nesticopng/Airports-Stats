@@ -1,5 +1,4 @@
 import streamlit as st
-from utils.database import obtener_datos
 
 # Configurar la página
 st.set_page_config(
@@ -14,6 +13,12 @@ st.title("✈️ Análisis exploratorio de tráfico aéreo en EE.UU 2022-2023")
 st.markdown("---")
 
 # Tab 1: Datos Completos
+st.subheader("Objetivo General")
+st.write("""Estudiar el comportamineto de la cantidad de psajeros nacionales e internacionales en los aeropuertos de estados unidos en los años 2022-2023.
+""")
+st.markdown("---")
+
+
 st.subheader("Objetivos específicos")
 objetivos = """
 - Estudiar el comportamiento de la cantidad de pasajeros nacionales e internacionales en los aeropuertos de Estados Unidos en los años 2022-2023

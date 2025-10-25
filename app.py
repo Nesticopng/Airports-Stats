@@ -1,5 +1,4 @@
 import streamlit as st
-import pandas as pd
 from utils.database import obtener_datos
 
 # Configurar la página
@@ -74,5 +73,6 @@ if not df.empty:
 else:
     st.error(f"❌ No se pudieron cargar los datos de la tabla '{tabla_seleccionada}'")
 
+# Footer
 st.markdown("---")
 st.markdown("📊 **✈️ Análisis exploratorio de tráfico aéreo en EE.UU 2022-2023** - Grupo 5 (Computación 2) - Universidad Central de Venezuela")

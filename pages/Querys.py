@@ -19,8 +19,8 @@ query_seleccionado = st.selectbox(
         "**Selecciona una consulta:**",
         [
             "🏆 Top 10 - Mayor Crecimiento Doméstico 2022-2023",
-            "📈 Aeropuertos con Crecimiento >20% Doméstico", 
-            "🌎 Participación de Pasajeros Internacionales por Aeropuerto",
+            "📈 Aeropuertos con Crecimiento mayor a 20% Doméstico", 
+            "🌎 Proporción de Pasajeros Internacionales",
             "🗺️ Top 5 Estados con Más Pasajeros Totales",
             "⬆️ Aeropuertos que Mejoraron su Ranking Total"
         ]
@@ -87,7 +87,7 @@ LIMIT 10;
                 st.info("💡 **Nota:** Asegúrate de que las tablas 'domestic' y 'airports' existan en Supabase")
     
 # QUERY 2: Crecimiento >20% doméstico
-elif query_seleccionado == "📈 Aeropuertos con Crecimiento >20% Doméstico":
+elif query_seleccionado == "📈 Aeropuertos con Crecimiento mayor a 20% Doméstico":
     st.subheader("**Aeropuertos donde el tráfico doméstico creció más de un 20% en 2023 respecto a 2022**")
     
     with st.expander("🔍 Ver Query SQL", expanded=True):
@@ -151,8 +151,8 @@ ORDER BY percentage_change_2022_2023_dom DESC;
                 st.info("💡 **Nota:** Asegúrate de que las tablas 'domestic' y 'airports' existan en Supabase")
     
 # QUERY 3: Participación internacional
-elif query_seleccionado == "🌎 Participación de Pasajeros Internacionales por Aeropuerto":
-    st.subheader("**Proporción de pasajeros internacionales por aeropuerto**")
+elif query_seleccionado == "🌎 Proporción de Pasajeros Internacionales":
+    st.subheader("**Proporción de Pasajeros Internacionales**")
     
     with st.expander("🔍 Ver Query SQL", expanded=True):
         st.code("""
