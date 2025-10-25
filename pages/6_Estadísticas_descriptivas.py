@@ -542,7 +542,56 @@ with tab_curtosis:
             año = "2023" if "2023" in col else "2022"
             st.plotly_chart(visualizaciones[f'kurt_{col}'], use_container_width=True)
 
+# --- Análisis de tipo de operación por aeropuerto ---
+st.markdown("---")
+st.markdown("### 🥧 Tipos de Aeropuertos: Domésticos vs Internacionales")
 
+# Determinar aeropuertos que tienen vuelos internacionales
+aeropuertos_domesticos = set(df_domestic['airport'].unique())
+aeropuertos_internacionales = set(df_international['airport'].unique())
+
+# Clasificar aeropuertos según su tipo de operación
+solo_domesticos = aeropuertos_domesticos - aeropuertos_internacionales
+dom_y_inter = aeropuertos_domesticos & aeropuertos_internacionales
+
+# Crear DataFrame para gráfico
+df_tipo_aeropuerto = {
+    "Tipo de Aeropuerto": ["Solo Doméstico", "Doméstico e Internacional"],
+    "Cantidad": [len(solo_domesticos), len(dom_y_inter)]
+}
+
+# Crear gráfico de pastel
+fig_tipo = px.pie(
+    df_tipo_aeropuerto,
+    values="Cantidad",
+    names="Tipo de Aeropuerto",
+    title="Distribución de Aeropuertos según Tipo de Vuelos",
+    color_discrete_sequence=px.colors.qualitative.Set2,
+    hole=0.4
+)
+
+fig_tipo.update_traces(
+    textinfo="percent+label",
+    pull=[0.05, 0],
+    marker=dict(line=dict(color="#FFFFFF", width=2))
+)
+
+fig_tipo.update_layout(
+    showlegend=True,
+    legend_title="Categoría",
+    legend=dict(orientation="h", y=-0.1, x=0.3)
+)
+
+# Mostrar gráfico
+st.plotly_chart(fig_tipo, use_container_width=True)
+
+# Texto interpretativo breve
+st.markdown("""
+**Interpretación:**
+- Los aeropuertos clasificados como *"Doméstico e Internacional"* manejan tanto vuelos internos como externos.  
+- Los *"Solo Doméstico"* se limitan a vuelos dentro del país.  
+- Esta proporción ayuda a visualizar la conectividad internacional del sistema aeroportuario de EE.UU.
+""")
 # Información adicional
 st.markdown("---")
 st.markdown("### ℹ️ Información sobre las Métricas")

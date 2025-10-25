@@ -56,15 +56,24 @@ def calcular_proporciones_por_aeropuerto(df_domestic, df_international, año):
         col_dom = '2022_enplaned_passengers_dom'
         col_inter = '2022_enplaned_passengers_inter'
     
-    # Crear DataFrame con todos los aeropuertos
-    df_proporciones = pd.DataFrame()
-    df_proporciones['airport'] = df_domestic['airport']
-    
-    # Limpiar y convertir valores a enteros, manejando None, NaN, y strings
-    df_proporciones['vuelos_domesticos'] = pd.to_numeric(df_domestic[col_dom], errors='coerce').fillna(0).astype(int)
-    df_proporciones['vuelos_internacionales'] = pd.to_numeric(df_international[col_inter], errors='coerce').fillna(0).astype(int)
-    
-    # Calcular totales
+#    Unir los datasets de domésticos e internacionales por aeropuerto
+    df_proporciones = pd.merge(
+        df_domestic[['airport', col_dom]],
+        df_international[['airport', col_inter]],
+        on='airport',
+        how='outer'  # mantiene todos los aeropuertos, incluso si no tienen datos internacionales
+    ).fillna(0)
+
+        # Renombrar columnas
+    df_proporciones.rename(columns={
+        col_dom: 'vuelos_domesticos',
+        col_inter: 'vuelos_internacionales'
+    }, inplace=True)
+
+    # Convertir a entero
+    df_proporciones['vuelos_domesticos'] = pd.to_numeric(df_proporciones['vuelos_domesticos'], errors='coerce').fillna(0).astype(int)
+    df_proporciones['vuelos_internacionales'] = pd.to_numeric(df_proporciones['vuelos_internacionales'], errors='coerce').fillna(0).astype(int)
+        # Calcular totales
     df_proporciones['total_vuelos'] = df_proporciones['vuelos_domesticos'] + df_proporciones['vuelos_internacionales']
     
     # Calcular porcentajes
