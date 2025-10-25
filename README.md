@@ -205,6 +205,7 @@ Este proyecto está desarrollado con fines académicos y de investigación.
 ## 🌐 Demo en Vivo
 
 **🚀 [Ver Proyecto Desplegado](https://airport-stats.streamlit.app/)**
+**🚀 [Ver Proyecto Desplegado]([https://airport-stats.streamlit.app/](https://app.powerbi.com/groups/me/reports/3effe0c6-37d1-4998-9794-b122558321a1/ad654e649829dc3336f7?experience=power-bi))**
 
 Puedes explorar todas las funcionalidades del sistema directamente en tu navegador sin necesidad de instalación.
 
