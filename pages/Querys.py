@@ -89,8 +89,8 @@ LIMIT 10;
             st.code("""
 SELECT 
     a.name,
-    d."2022_enplaned_passengers_dom" as 2022_passengers,
-    d."2023_enplaned_passengers_dom" as 2023_passengers,
+    d."2022_enplaned_passengers_dom" as "2022_passengers",
+    d."2023_enplaned_passengers_dom" as "2023_passengers",
     (d."2023_enplaned_passengers_dom" - d."2022_enplaned_passengers_dom") as increase
 FROM domestic as d
 INNER JOIN airports as a ON d.airport_id = a.id
